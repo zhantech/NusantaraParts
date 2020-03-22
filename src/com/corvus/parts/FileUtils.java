@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2018 The Asus-SDM660 Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License
+ */
+
 package com.corvus.parts;
 
 import java.io.BufferedReader;
@@ -19,14 +35,14 @@ public class FileUtils {
         return new File(filename).exists();
     }
 
-    public static void setValue(String path, Boolean value) {
+    static void setValue(String path, boolean value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
             }
             try {
                 FileOutputStream fos = new FileOutputStream(new File(path));
-                fos.write((value ? "1" : "0").getBytes());
+                fos.write((value ? "Y" : "N").getBytes());
                 fos.flush();
                 fos.close();
             } catch (IOException e) {
@@ -51,7 +67,7 @@ public class FileUtils {
         }
     }
 
-    static void setValue(String path, double value) {
+    public static void setValue(String path, double value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
@@ -67,7 +83,7 @@ public class FileUtils {
         }
     }
 
-    public static void setValue(String path, String value) {
+   public static void setValue(String path, String value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
@@ -109,22 +125,8 @@ public class FileUtils {
     static boolean getFileValueAsBoolean(String filename, boolean defValue) {
         String fileValue = readLine(filename);
         if (fileValue != null) {
-            return (fileValue.equals("0")?false:true);
+            return !fileValue.equals("N");
         }
         return defValue;
-    }
-
-    static String getValue(String filename) {
-        if (filename == null) {
-            return null;
-        }
-        String line;
-        try (BufferedReader br = new BufferedReader(new FileReader(filename), 1024)) {
-            line = br.readLine();
-        } catch (IOException e) {
-            return null;
-        }
-        // ignore
-        return line;
     }
 }

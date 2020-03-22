@@ -88,15 +88,17 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/other_category" >
-        <SwitchPreference
-            android:key="fastcharge"
-            android:defaultValue="false"
-            android:title="@string/fastcharge_title"
-            android:icon="@drawable/ic_fastcharge"
-            android:summary="@string/fastcharge_summary" />
-    </PreferenceCategory>
+    <!--PreferenceCategory
+        android:key="notification_led"
+        android:title="@string/notification_title">
+        <com.corvus.parts.preferences.NotificationLedSeekBarPreference
+            android:key="notification_led_brightness"
+            android:title="@string/notification_led_title"
+            android:max="100"
+            app:min="1"
+            app:units="%"
+            android:defaultValue="100" />
+    </PreferenceCategory -->
 
     <PreferenceCategory
         android:key="torch"
