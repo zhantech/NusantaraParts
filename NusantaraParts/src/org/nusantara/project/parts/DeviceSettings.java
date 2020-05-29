@@ -68,13 +68,13 @@ public class DeviceSettings extends PreferenceFragment implements
             prefScreen.removePreference(microphone_gain);
         }
 
-        CustomSeekBarPreference torch_brightness = (CustomSeekBarPreference) findPreference(PREF_TORCH_BRIGHTNESS);
-        if (FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH));
-          if (FileUtils.fileWritable(TORCH_2_BRIGHTNESS_PATH)) {
-            torch_brightness.setOnPreferenceChangeListener(this);
-        } else {
-            prefScreen.removePreference(findPreference(TORCH_KEY));
-        }
+        CustomSeekBarPreference torch_yellow = (CustomSeekBarPreference) findPreference(PERF_YELLOW_TORCH_BRIGHTNESS);
+        torch_yellow.setEnabled(FileUtils.fileWritable(TORCH_YELLOW_BRIGHTNESS_PATH));
+        torch_yellow.setOnPreferenceChangeListener(this);
+
+        CustomSeekBarPreference torch_white = (CustomSeekBarPreference) findPreference(PERF_WHITE_TORCH_BRIGHTNESS);
+        torch_white.setEnabled(FileUtils.fileWritable(TORCH_WHITE_BRIGHTNESS_PATH));
+        torch_white.setOnPreferenceChangeListener(this);
 
         SecureSettingSwitchPreference dim = (SecureSettingSwitchPreference) findPreference(PREF_BACKLIGHT_DIMMER);
         if (FileUtils.fileWritable(BACKLIGHT_DIMMER_PATH)) {
@@ -124,9 +124,12 @@ public class DeviceSettings extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
         switch (key) {
-            case PREF_TORCH_BRIGHTNESS:
-                FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
-                FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, (int) value);
+            case PERF_YELLOW_TORCH_BRIGHTNESS:
+                FileUtils.setValue(TORCH_YELLOW_BRIGHTNESS_PATH, (int) value);
+                break;
+
+            case PERF_WHITE_TORCH_BRIGHTNESS:
+                FileUtils.setValue(TORCH_WHITE_BRIGHTNESS_PATH, (int) value);
                 break;
 
             case PREF_VIBRATION_SYSTEM_STRENGTH:

@@ -46,10 +46,15 @@ public class BootReceiver extends BroadcastReceiver implements Controller {
         FileUtils.setValue(HEADPHONE_GAIN_PATH, gain + " " + gain);
         FileUtils.setValue(MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(), PREF_MICROPHONE_GAIN, 0));
 
-        FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                        PREF_TORCH_BRIGHTNESS, 100));
-        FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                        PREF_TORCH_BRIGHTNESS, 100));
+	//Yellow Torch
+        FileUtils.setValue(DeviceSettings.TORCH_YELLOW_BRIGHTNESS_PATH,
+                Settings.Secure.getInt(context.getContentResolver(),
+                        DeviceSettings.PERF_YELLOW_TORCH_BRIGHTNESS, 100));
+
+	//White Torch
+        FileUtils.setValue(DeviceSettings.TORCH_WHITE_BRIGHTNESS_PATH,
+                Settings.Secure.getInt(context.getContentResolver(),
+                        DeviceSettings.PERF_WHITE_TORCH_BRIGHTNESS, 100));
 
 	FileUtils.setValue(DeviceSettings.VIBRATION_SYSTEM_PATH, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_VIBRATION_SYSTEM_STRENGTH, 80) / 100.0 * (DeviceSettings.MAX_VIBRATION - DeviceSettings.MIN_VIBRATION) + DeviceSettings.MIN_VIBRATION);

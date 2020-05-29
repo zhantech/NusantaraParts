@@ -61,14 +61,16 @@ public interface Controller {
 
     // Torch
     String TORCH_KEY = "torch";
-    String PREF_TORCH_BRIGHTNESS = "torch_brightness";
+    String PERF_YELLOW_TORCH_BRIGHTNESS = "yellow_torch_brightness";
+    String PERF_WHITE_TORCH_BRIGHTNESS = "white_torch_brightness";
 
-    String TORCH_1_BRIGHTNESS_PATH = "/sys/devices/soc/800f000.qcom," +
-            "spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_0/max_brightness";
-    String TORCH_2_BRIGHTNESS_PATH = "/sys/devices/soc/800f000.qcom," +
-            "spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_1/max_brightness";
+    String TORCH_YELLOW_BRIGHTNESS_PATH = "/sys/devices/soc/200f000.qcom," +
+            "spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_0/max_brightness";
+    String TORCH_WHITE_BRIGHTNESS_PATH = "/sys/devices/soc/200f000.qcom," +
+            "spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_1/max_brightness";
 
     // Vibrate
+    String VIBRATION_KEY = "vtg";
     String PREF_VIBRATION_SYSTEM_STRENGTH = "vibration_system";
     String PREF_VIBRATION_NOTIFICATION_STRENGTH = "vibration_notification";
     String PREF_VIBRATION_CALL_STRENGTH = "vibration_call";

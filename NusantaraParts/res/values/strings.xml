@@ -15,7 +15,8 @@
     <string name="microphone_gain">Microphone gain</string>
 
     <!-- Torch -->
-    <string name="torch_brightness_title">Brightness</string>
+    <string name="torch_yellow_brightness_title">White brightness</string>
+    <string name="torch_white_brightness_title">Yellow brightness</string>
 
     <!-- Backlight Dimmer -->
     <string name="backlight_dimmer">Backlight Dimmer</string>
