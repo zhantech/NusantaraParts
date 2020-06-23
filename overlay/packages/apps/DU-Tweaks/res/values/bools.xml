@@ -13,7 +13,7 @@
 
 <resources>
 
-    <!-- Whether or not a device has device extras -->
-    <bool name="has_corvus_parts_available">true</bool>
+    <!-- Whether or not a device has nusantara parts -->
+    <bool name="has_nusantara_parts_available">true</bool>
 
 </resources>
