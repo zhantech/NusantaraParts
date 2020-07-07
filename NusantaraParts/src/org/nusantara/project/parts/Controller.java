@@ -9,11 +9,6 @@ public interface Controller {
     String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
-    // Dirac
-    String PREF_ENABLE_DIRAC = "dirac_enabled";
-    String PREF_HEADSET = "dirac_headset_pref";
-    String PREF_PRESET = "dirac_preset_pref";
-
     // Dimmer
     String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
     String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";

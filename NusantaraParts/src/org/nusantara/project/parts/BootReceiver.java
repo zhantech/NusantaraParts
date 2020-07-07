@@ -60,9 +60,6 @@ public class BootReceiver extends BroadcastReceiver implements Controller {
 
         FileUtils.setValue(BACKLIGHT_DIMMER_PATH, Settings.Secure.getInt(context.getContentResolver(), PREF_BACKLIGHT_DIMMER, 0));
 
-	//Dirac
-        context.startService(new Intent(context, DiracService.class));
-
         boolean enabled = sharedPrefs.getBoolean(PREF_KEY_FPS_INFO, false);
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
