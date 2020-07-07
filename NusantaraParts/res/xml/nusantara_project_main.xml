@@ -117,12 +117,6 @@
         android:key="vtg"
         android:title="@string/vibration_category">
 
-        <SwitchPreference
-            android:key="vmax_override"
-            android:icon="@drawable/ic_vibrate"
-            android:title="@string/vibration_override_title"
-            android:persistent="false" />
-
         <org.nusantara.project.parts.preferences.VibrationSeekBarPreference
             android:defaultValue="13"
             android:key="vibration_system"

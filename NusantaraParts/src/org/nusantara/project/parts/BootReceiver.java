@@ -51,8 +51,6 @@ public class BootReceiver extends BroadcastReceiver implements Controller {
         FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, Settings.Secure.getInt(context.getContentResolver(),
                         PREF_TORCH_BRIGHTNESS, 100));
 
-        FileUtils.setValue(DeviceSettings.PREF_VIBRATION_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_VIBRATION_OVERRIDE, 0));
 	FileUtils.setValue(DeviceSettings.VIBRATION_SYSTEM_PATH, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_VIBRATION_SYSTEM_STRENGTH, 80) / 100.0 * (DeviceSettings.MAX_VIBRATION - DeviceSettings.MIN_VIBRATION) + DeviceSettings.MIN_VIBRATION);
 	FileUtils.setValue(DeviceSettings.VIBRATION_NOTIFICATION_PATH, Settings.Secure.getInt(

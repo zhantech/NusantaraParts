@@ -16,7 +16,6 @@
     <string name="backlight_summary">Redupkan layar ke nilai paling maksimum</string>
 
     <!-- Vibrator -->
-    <string name="vibration_override_title">Aktifkan Vibrasi Kernel</string>
     <string name="vibration_system_title">Kekuatan Vibrasi Sistem</string>
     <string name="vibration_notification_title">Kekuatan Vibrasi Notifikasi</string>
     <string name="vibration_call_title">Kekuatan Vibrasi Telepon</string>

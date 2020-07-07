@@ -42,10 +42,6 @@ public class DeviceSettings extends PreferenceFragment implements
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         PreferenceScreen prefScreen = getPreferenceScreen();
 
-        SwitchPreference vib = (SwitchPreference) findPreference(PREF_VIBRATION_OVERRIDE);
-        vib.setChecked(FileUtils.fileWritable(VIBRATION_OVERRIDE);
-        vib.setOnPreferenceChangeListener(this);
-
         VibrationSeekBarPreference vibrationSystemStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_SYSTEM_STRENGTH);
         vibrationSystemStrength.setEnabled(FileUtils.fileWritable(VIBRATION_SYSTEM_PATH));
         vibrationSystemStrength.setOnPreferenceChangeListener(this);

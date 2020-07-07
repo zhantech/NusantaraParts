@@ -74,11 +74,10 @@ public interface Controller {
             "spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_1/max_brightness";
 
     // Vibrate
-    String PREF_VIBRATION_OVERRIDE = "vmax_override";
     String PREF_VIBRATION_SYSTEM_STRENGTH = "vibration_system";
     String PREF_VIBRATION_NOTIFICATION_STRENGTH = "vibration_notification";
     String PREF_VIBRATION_CALL_STRENGTH = "vibration_call";
-    String VIBRATION_OVERRIDE = "/sys/class/leds/vibrator/vmax_override";
+
     String VIBRATION_SYSTEM_PATH = "/sys/class/leds/vibrator/vmax_mv_user";
     String VIBRATION_NOTIFICATION_PATH = "/sys/class/leds/vibrator/vmax_mv_strong";
     String VIBRATION_CALL_PATH = "/sys/class/leds/vibrator/vmax_mv_call";
