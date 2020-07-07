@@ -14,7 +14,7 @@ public interface Controller {
     String PREF_HEADSET = "dirac_headset_pref";
     String PREF_PRESET = "dirac_preset_pref";
 
-    // Dimmer 
+    // Dimmer
     String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
     String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
 
@@ -74,10 +74,15 @@ public interface Controller {
             "spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_1/max_brightness";
 
     // Vibrate
-    String VIBRATION_KEY = "vtg";
-    String PREF_VIBRATION_STRENGTH = "vibration_strength";
+    String PREF_VIBRATION_OVERRIDE = "vmax_override";
+    String PREF_VIBRATION_SYSTEM_STRENGTH = "vibration_system";
+    String PREF_VIBRATION_NOTIFICATION_STRENGTH = "vibration_notification";
+    String PREF_VIBRATION_CALL_STRENGTH = "vibration_call";
+    String VIBRATION_OVERRIDE = "/sys/class/leds/vibrator/vmax_override";
+    String VIBRATION_SYSTEM_PATH = "/sys/class/leds/vibrator/vmax_mv_user";
+    String VIBRATION_NOTIFICATION_PATH = "/sys/class/leds/vibrator/vmax_mv_strong";
+    String VIBRATION_CALL_PATH = "/sys/class/leds/vibrator/vmax_mv_call";
 
-    String VIBRATION_STRENGTH_PATH = "/sys/devices/virtual/timed_output/vibrator/vtg_level";
     int MIN_VIBRATION = 116;
     int MAX_VIBRATION = 3596;
 }

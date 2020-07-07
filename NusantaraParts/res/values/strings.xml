@@ -26,7 +26,10 @@
     <string name="fps_info_summary">Show FPS info</string>
 
     <!-- Vibrator -->
-    <string name="vibration_strength_title">Strength</string>
+    <string name="vibration_override_title">Override System Vibration</string>
+    <string name="vibration_system_title">System Vibration Strength</string>
+    <string name="vibration_notification_title">Notification Vibration Strength</string>
+    <string name="vibration_call_title">Call Vibration Strength</string>
 
     <!-- kcal -->
     <string name="device_kcal_title">Display Calibration</string>

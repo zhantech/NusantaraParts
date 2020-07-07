@@ -42,12 +42,21 @@ public class DeviceSettings extends PreferenceFragment implements
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         PreferenceScreen prefScreen = getPreferenceScreen();
 
-        VibrationSeekBarPreference vibrationStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_STRENGTH);
-        if (FileUtils.fileWritable(VIBRATION_STRENGTH_PATH)) {
-            vibrationStrength.setOnPreferenceChangeListener(this);
-        } else {
-            prefScreen.removePreference(findPreference(VIBRATION_KEY));
-        }
+        SwitchPreference vib = (SwitchPreference) findPreference(PREF_VIBRATION_OVERRIDE);
+        vib.setChecked(FileUtils.fileWritable(VIBRATION_OVERRIDE);
+        vib.setOnPreferenceChangeListener(this);
+
+        VibrationSeekBarPreference vibrationSystemStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_SYSTEM_STRENGTH);
+        vibrationSystemStrength.setEnabled(FileUtils.fileWritable(VIBRATION_SYSTEM_PATH));
+        vibrationSystemStrength.setOnPreferenceChangeListener(this);
+
+        VibrationSeekBarPreference vibrationNotificationStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_NOTIFICATION_STRENGTH);
+        vibrationNotificationStrength.setEnabled(FileUtils.fileWritable(VIBRATION_NOTIFICATION_PATH));
+        vibrationNotificationStrength.setOnPreferenceChangeListener(this);
+
+        VibrationSeekBarPreference vibrationCallStrength = (VibrationSeekBarPreference) findPreference(PREF_VIBRATION_CALL_STRENGTH);
+        vibrationCallStrength.setEnabled(FileUtils.fileWritable(VIBRATION_CALL_PATH));
+        vibrationCallStrength.setOnPreferenceChangeListener(this);
 
         CustomSeekBarPreference headphone_gain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
         if (FileUtils.fileWritable(HEADPHONE_GAIN_PATH)) {
@@ -149,9 +158,19 @@ public class DeviceSettings extends PreferenceFragment implements
                 FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, (int) value);
                 break;
 
-            case PREF_VIBRATION_STRENGTH:
-                double vibrationValue = (int) value / 100.0 * (MAX_VIBRATION - MIN_VIBRATION) + MIN_VIBRATION;
-                FileUtils.setValue(VIBRATION_STRENGTH_PATH, vibrationValue);
+            case PREF_VIBRATION_SYSTEM_STRENGTH:
+                double VibrationSystemValue = (int) value / 100.0 * (MAX_VIBRATION - MIN_VIBRATION) + MIN_VIBRATION;
+                FileUtils.setValue(VIBRATION_SYSTEM_PATH, VibrationSystemValue);
+                break;
+
+            case PREF_VIBRATION_NOTIFICATION_STRENGTH:
+                double VibrationNotificationValue = (int) value / 100.0 * (MAX_VIBRATION - MIN_VIBRATION) + MIN_VIBRATION;
+                FileUtils.setValue(VIBRATION_NOTIFICATION_PATH, VibrationNotificationValue);
+                break;
+
+            case PREF_VIBRATION_CALL_STRENGTH:
+                double VibrationCallValue = (int) value / 100.0 * (MAX_VIBRATION - MIN_VIBRATION) + MIN_VIBRATION;
+                FileUtils.setValue(VIBRATION_CALL_PATH, VibrationCallValue);
                 break;
 
             case PREF_HEADPHONE_GAIN:
