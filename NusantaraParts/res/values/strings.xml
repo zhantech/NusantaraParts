@@ -13,6 +13,8 @@
     <!-- Audio amplification -->
     <string name="headphone_gain">Headphone gain</string>
     <string name="microphone_gain">Microphone gain</string>
+    <string name="highperfaudio_title">Ultra High Quality Audio</string>
+    <string name="highperfaudio_summary">Enable to get bettter Audio Experience</string>
 
     <!-- Torch -->
     <string name="torch_yellow_brightness_title">White brightness</string>

@@ -32,6 +32,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String TAG = "DeviceSettings";
 
     private static Context mContext;
+    private SecureSettingSwitchPreference mHighAudio;
     private SwitchPreference mSelinuxMode;
     private SwitchPreference mSelinuxPersistence;
 
@@ -66,6 +67,14 @@ public class DeviceSettings extends PreferenceFragment implements
             microphone_gain.setOnPreferenceChangeListener(this);
         } else {
             prefScreen.removePreference(microphone_gain);
+        }
+
+        if (FileUtils.fileWritable(HIGH_AUDIO_PATH)) {
+            mHighAudio = (SecureSettingSwitchPreference) findPreference(HIGH_PERF_AUDIO);
+            mHighAudio.setChecked(FileUtils.getFileValueAsBoolean(HIGH_AUDIO_PATH, true));
+            mHighAudio.setOnPreferenceChangeListener(this);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(HIGH_PERF_AUDIO));
         }
 
         CustomSeekBarPreference torch_yellow = (CustomSeekBarPreference) findPreference(PERF_YELLOW_TORCH_BRIGHTNESS);
@@ -153,6 +162,10 @@ public class DeviceSettings extends PreferenceFragment implements
 
             case PREF_MICROPHONE_GAIN:
                 FileUtils.setValue(MICROPHONE_GAIN_PATH, (int) value);
+                break;
+
+            case HIGH_PERF_AUDIO:
+                FileUtils.setValue(HIGH_AUDIO_PATH, (boolean) value);
                 break;
 
             case PREF_KEY_FPS_INFO:

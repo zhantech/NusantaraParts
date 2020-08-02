@@ -5,9 +5,11 @@ public interface Controller {
     // Audio Gain
     String PREF_HEADPHONE_GAIN = "headphone_gain";
     String PREF_MICROPHONE_GAIN = "microphone_gain";
+    String HIGH_PERF_AUDIO = "highperfaudio";
 
     String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
+    String HIGH_AUDIO_PATH = "/sys/module/wcd9335_dlkm/parameters/huwifi_mode";
 
     // Dimmer
     String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";

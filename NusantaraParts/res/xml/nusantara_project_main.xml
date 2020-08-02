@@ -19,6 +19,12 @@
             android:icon="@drawable/ic_mic"
             android:title="@string/microphone_gain"/>
 
+        <org.nusantara.project.parts.preferences.SecureSettingSwitchPreference
+            android:key="highperfaudio"
+            android:defaultValue="false"
+            android:title="@string/highperfaudio_title"
+            android:icon="@drawable/ic_haudio"
+            android:summary="@string/highperfaudio_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/display_category">

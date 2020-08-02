@@ -45,6 +45,8 @@ public class BootReceiver extends BroadcastReceiver implements Controller {
         int gain = Settings.Secure.getInt(context.getContentResolver(), PREF_HEADPHONE_GAIN, 2);
         FileUtils.setValue(HEADPHONE_GAIN_PATH, gain + " " + gain);
         FileUtils.setValue(MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(), PREF_MICROPHONE_GAIN, 0));
+        FileUtils.setValue(DeviceSettings.HIGH_AUDIO_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                DeviceSettings.HIGH_PERF_AUDIO, 0));
 
 	//Yellow Torch
         FileUtils.setValue(DeviceSettings.TORCH_YELLOW_BRIGHTNESS_PATH,
