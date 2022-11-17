@@ -66,10 +66,8 @@ public interface Controller {
     String PERF_YELLOW_TORCH_BRIGHTNESS = "yellow_torch_brightness";
     String PERF_WHITE_TORCH_BRIGHTNESS = "white_torch_brightness";
 
-    String TORCH_YELLOW_BRIGHTNESS_PATH = "/sys/devices/soc/200f000.qcom," +
-            "spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_0/max_brightness";
-    String TORCH_WHITE_BRIGHTNESS_PATH = "/sys/devices/soc/200f000.qcom," +
-            "spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_1/max_brightness";
+    String TORCH_YELLOW_BRIGHTNESS_PATH = "/sys/class/leds/led:torch_0/max_brightness";
+    String TORCH_WHITE_BRIGHTNESS_PATH = "/sys/class/leds/led:torch_1/max_brightness";
 
     // Vibrate
     String VIBRATION_KEY = "vtg";
